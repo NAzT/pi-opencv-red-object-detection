@@ -31,6 +31,9 @@
 #define VIDEO_WIDTH 1280
 #define VIDEO_HEIGHT 720
 
+//#define VIDEO_WIDTH 640 
+//#define VIDEO_HEIGHT 360
+
 typedef struct {
     int video_width;
     int video_height;
@@ -42,9 +45,25 @@ typedef struct {
     MMAL_POOL_T *camera_video_port_pool;
     CvMemStorage* storage;
     IplImage* image;
-    IplImage* image_cv;
+    IplImage* image_py;
+    IplImage* image_pu;
+    IplImage* image_pv;
+    IplImage* image_pu_big;
+    IplImage* image_pv_big; 
+    IplImage* image_3channels;
+    IplImage* image_opencv;
+    IplImage* image_segmented;
     VCOS_SEMAPHORE_T complete_semaphore;
 } PORT_USERDATA;
+
+//int iLowH = 47;
+int iLowH = 50;
+int iLowS = 150; 
+int iLowV = 50;
+
+int iHighH = 179;
+int iHighS = 255;
+int iHighV = 255;
 
 static void video_buffer_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffer) {
     static int frame_count = 0;
@@ -61,11 +80,57 @@ static void video_buffer_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffe
     frame_count++; 
 
     mmal_buffer_header_mem_lock(buffer);
-    memcpy(userdata->image->imageData, buffer->data, userdata->video_width * userdata->video_height);
+    memcpy(userdata->image_py->imageData, buffer->data, userdata->video_width * userdata->video_height);
 
     // display image in cv_window
-    cvResize(userdata->image, userdata->image_cv, CV_INTER_LINEAR);
-    cvShowImage("Frame", userdata->image_cv); 
+    //cvResize(userdata->image, userdata->image_py, CV_INTER_LINEAR);
+
+    int  w = userdata->video_width;
+    int  h = userdata->video_height;
+    int h4 = userdata->video_height/4;
+
+    memcpy(userdata->image_pu->imageData,buffer->data+w*h,w*h4); // read U
+    memcpy(userdata->image_pv->imageData,buffer->data+w*h+w*h4,w*h4); // read v
+
+    cvResize(userdata->image_pu, userdata->image_pu_big, CV_INTER_NN);
+    cvResize(userdata->image_pv, userdata->image_pv_big, CV_INTER_NN);  //CV_INTER_LINEAR looks better but it's slower
+    cvMerge(userdata->image_py, userdata->image_pu_big, userdata->image_pv_big, NULL, userdata->image_3channels); 
+    cvResize(userdata->image_3channels, userdata->image_opencv, CV_INTER_NN); 
+
+    cvCvtColor(userdata->image_opencv, userdata->image_opencv, CV_YCrCb2RGB);
+    cvCvtColor(userdata->image_opencv, userdata->image_opencv, CV_BGR2HSV);
+
+    cvInRangeS(userdata->image_opencv, cvScalar(iLowH, iLowS, iLowV, 0), cvScalar(iHighH, iHighS, iHighV, 0), userdata->image_segmented); //Threshold the image 
+        // Calculate the moments to estimate the position of the ball
+        CvMoments *moments = (CvMoments*)malloc(sizeof(CvMoments));
+        cvMoments(userdata->image_segmented, moments, 1);
+
+        // The actual moment values
+        double moment10 = cvGetSpatialMoment(moments, 1, 0);
+        double moment01 = cvGetSpatialMoment(moments, 0, 1);
+        double area = cvGetCentralMoment(moments, 0, 0);
+
+    // Holding the last and current ball positions
+        static int posX = 0;
+        static int posY = 0;
+
+        int lastX = posX;
+        int lastY = posY;
+
+        posX = moment10/area;
+        posY = moment01/area;
+
+        // Print it out for debugging purposes
+        printf("position (%d,%d)\n", posX, posY);
+
+        if(lastX>0 && lastY>0 && posX>0 && posY>0)
+        {
+            // Draw a yellow line from the previous point to the current point
+            cvLine(userdata->image_segmented, cvPoint(posX, posY), cvPoint(lastX, lastY), cvScalar(0,255,255, 0), 5, 8, 0);
+        }
+
+    //cvShowImage("Frame", userdata->image_segmented);
+
     char c =cvWaitKey(1);
 
     mmal_buffer_header_mem_unlock(buffer);
@@ -141,8 +206,19 @@ int main(int argc, char** argv) {
     cvNamedWindow("Frame", 1);
 
     userdata.storage = cvCreateMemStorage(0);
-    userdata.image = cvCreateImage(cvSize(userdata.video_width, userdata.video_height), IPL_DEPTH_8U, 1);
-    userdata.image_cv = cvCreateImage(cvSize(userdata.opencv_width, userdata.opencv_height), IPL_DEPTH_8U, 1); 
+    userdata.image    = cvCreateImage(cvSize(userdata.video_width, userdata.video_height), IPL_DEPTH_8U, 1);
+    userdata.image_py = cvCreateImage(cvSize(userdata.video_width, userdata.video_height), IPL_DEPTH_8U, 1); 
+
+    userdata.image_pu = cvCreateImage(cvSize(userdata.video_width/2, userdata.video_height/2), IPL_DEPTH_8U, 1); 
+    userdata.image_pv = cvCreateImage(cvSize(userdata.video_width/2, userdata.video_height/2), IPL_DEPTH_8U, 1); 
+
+    userdata.image_pu_big = cvCreateImage(cvSize(userdata.video_width, userdata.video_height), IPL_DEPTH_8U, 1); 
+    userdata.image_pv_big = cvCreateImage(cvSize(userdata.video_width, userdata.video_height), IPL_DEPTH_8U, 1); 
+
+    userdata.image_3channels = cvCreateImage(cvSize(userdata.video_width, userdata.video_height), IPL_DEPTH_8U, 3); 
+
+    userdata.image_opencv =  cvCreateImage(cvSize(userdata.video_width/2, userdata.video_height/2), IPL_DEPTH_8U, 3); 
+    userdata.image_segmented = cvCreateImage(cvSize(userdata.video_width/2, userdata.video_height/2), IPL_DEPTH_8U, 1); 
 
     status = mmal_component_create(MMAL_COMPONENT_DEFAULT_CAMERA, &camera);
     if (status != MMAL_SUCCESS) {
@@ -178,7 +254,7 @@ int main(int argc, char** argv) {
     format->encoding_variant = MMAL_ENCODING_I420;
 
     format->es->video.width = userdata.video_width;
-    format->es->video.height = userdata.video_width;
+    format->es->video.height = userdata.video_height;
     format->es->video.crop.x = 0;
     format->es->video.crop.y = 0;
     format->es->video.crop.width = userdata.video_width;
