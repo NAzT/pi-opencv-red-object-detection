@@ -1,0 +1,1000 @@
+ 1050  git status
+ 1051  git add ../opencv_demo.c
+ 1052  git commit -m 'define VIDEO_WIDTH & VIDEO_HEIGHT'
+ 1053  git push -u origin  develop 
+ 1054  ls
+ 1055  vi ../opencv_demo.c 
+ 1056  echo $DISPLAY
+ 1057  export DISPLAY=:1.0
+ 1058  ls
+ 1059  ./mmal_opencv_demo 
+ 1060  ls
+ 1061  cd ..
+ 1062  ls
+ 1063  cd build/
+ 1064  ls
+ 1065  git status
+ 1066  ls
+ 1067  cd ..
+ 1068  ls
+ 1069  l
+ 1070  ls
+ 1071  cp opencv_demo.c opencv_window_demo.c 
+ 1072  ls
+ 1073  vi CMakeLists.txt 
+ 1074  cd build/
+ 1075  ls
+ 1076  rm -rvf *
+ 1077  cmake ..\
+ 1078  cmake ..
+ 1079  ls
+ 1080  make
+ 1081  ls
+ 1082  ./mmal_opencv_window_demo 
+ 1083  ls
+ 1084  vi ../opencv_window_demo.c 
+ 1085  make 
+ 1086  ./mmal_opencv_
+ 1087  ./mmal_opencv_window_demo 
+ 1088  ls
+ 1089  cd ..
+ 1090  ls
+ 1091  cd build/
+ 1092  ls
+ 1093  git status
+ 1094  git branch
+ 1095  git status
+ 1096  git stash -u
+ 1097  git checkout -b opencv_window
+ 1098  git stash pop
+ 1099  vi ../opencv_window_demo.c 
+ 1100  make
+ 1101  vi ../opencv_window_demo.c 
+ 1102  make
+ 1103  ./mmal_opencv_demo 
+ 1104  ./mmal_opencv_window_demo 
+ 1105  vi ../opencv_window_demo.c 
+ 1106  make
+ 1107  ./mmal_opencv_window_demo 
+ 1108  echo $DISPLAY 
+ 1109  vi ../opencv_window_demo.c 
+ 1110  vi ../CMakeLists.txt 
+ 1111  ls
+ 1112  make
+ 1113  ./mmal_opencv_window_demo 
+ 1114  vi ../CMakeLists.txt 
+ 1115  vi ../opencv_window_demo.c 
+ 1116  make .
+ 1117  make
+ 1118  ./mmal_opencv_window_demo 
+ 1119  vi ../opencv_window_demo.c 
+ 1120  ls
+ 1121  vi ../opencv_window_demo.c 
+ 1122  make
+ 1123  ./mmal_opencv_window_demo 
+ 1124  screen -r
+ 1125  ls
+ 1126  cd ..
+ 1127  ../nazt-red/build/opencv_demo 
+ 1128  vi ../opencv_window_demo.c 
+ 1129  ls
+ 1130  cd build/
+ 1131  ls
+ 1132  vi ../opencv_window_demo.c 
+ 1133  make ..
+ 1134  make
+ 1135  vi ../opencv_window_demo.c 
+ 1136  make
+ 1137  ./mmal_opencv_window_demo 
+ 1138  ls
+ 1139  git status
+ 1140  git add ..
+ 1141  git status
+ 1142  ls
+ 1143  cd src/
+ 1144  ls
+ 1145  cd raspberrypi/
+ 1146  ls
+ 1147  cd ..
+ 1148  cd rpi-mmal-demo/
+ 1149  ls
+ 1150  cd build/
+ 1151  ls
+ 1152  ./mmal
+ 1153  ./mmal_opencv_demo 
+ 1154  ./mmal_opencv_window_demo 
+ 1155  export DISPLAY=:1.0
+ 1156  ./mmal_opencv_window_demo 
+ 1157  cd ..
+ 1158  git status
+ 1159  git add ..
+ 1160  git statu
+ 1161  git status
+ 1162  git add ..
+ 1163  git add .
+ 1164  git commit -m "Add example: opencv_window"
+ 1165  git push 
+ 1166  git status
+ 1167  git checkout develop 
+ 1168  git merge opencv_window 
+ 1169  git push -u origin develop 
+ 1170  ls
+ 1171  cd build/
+ 1172  ls
+ 1173  ./mmal_opencv_window_demo 
+ 1174  ls
+ 1175  vi ../opencv_window_demo.c 
+ 1176  ls
+ 1177  make
+ 1178  vi ../opencv_window_demo.c 
+ 1179  ls
+ 1180  cd src/
+ 1181  ls
+ 1182  cd rpi-mmal-demo/
+ 1183  ls
+ 1184  cd build/
+ 1185  ls
+ 1186  ./mmal_opencv_window_demo 
+ 1187  export DISPLAY=:1.0
+ 1188  ./mmal_opencv_window_demo 
+ 1189  ls
+ 1190  cd src/rpi-mmal-demo/
+ 1191  ls
+ 1192  git status
+ 1193  git diff opencv_window 
+ 1194  vi ../opencv_window_demo.c 
+ 1195  ls
+ 1196  cd u
+ 1197  vi ../opencv_window_demo.c 
+ 1198  ls
+ 1199  cd build/
+ 1200  ls
+ 1201  vi ../opencv_window_demo.c 
+ 1202  ./mmal_opencv_window_demo 
+ 1203  export DISPLAY=:1.0
+ 1204  ./mmal_opencv_window_demo 
+ 1205  vi ../opencv_window_demo.c 
+ 1206  make
+ 1207  vi ../opencv_window_demo.c 
+ 1208  make
+ 1209  ./mmal_opencv_window_demo 
+ 1210  vi ../opencv_window_demo.c 
+ 1211  make
+ 1212  vi ../opencv_window_demo.c 
+ 1213  make
+ 1214  vi ../opencv_window_demo.c 
+ 1215  make
+ 1216  vi ../opencv_window_demo.c 
+ 1217  make
+ 1218  ./mmal_opencv_window_demo 
+ 1219  vi ../opencv_window_demo.c 
+ 1220  make
+ 1221  vi ../opencv_window_demo.c 
+ 1222  ./mmal_opencv_window_demo 
+ 1223  vi ../opencv_window_demo.c 
+ 1224  make
+ 1225  ./mmal_opencv_window_demo 
+ 1226  vi ../opencv_window_demo.c 
+ 1227  make
+ 1228  ./mmal_opencv_window_demo 
+ 1229  vi ../opencv_window_demo.c 
+ 1230  make
+ 1231  ./mmal_opencv_window_demo 
+ 1232  vi ../opencv_window_demo.c 
+ 1233  make
+ 1234  vi ../opencv_window_demo.c 
+ 1235  make
+ 1236  ./mmal_opencv_window_demo 
+ 1237  vi ../opencv_window_demo.c 
+ 1238  make
+ 1239  ./mmal_opencv_window_demo 
+ 1240  vi ../opencv_window_demo.c 
+ 1241  make
+ 1242  vi ../opencv_window_demo.c 
+ 1243  make
+ 1244  ./mmal_opencv_window_demo 
+ 1245  vi ../opencv_window_demo.c 
+ 1246  make
+ 1247  ./mmal_opencv_window_demo 
+ 1248  vi ../opencv_window_demo.c 
+ 1249  make
+ 1250  ./mmal_opencv_
+ 1251  ./mmal_opencv_window_demo 
+ 1252  vi ../opencv_window_demo.c 
+ 1253  make
+ 1254  ./mmal_opencv_window_demo 
+ 1255  vi ../opencv_window_demo.c 
+ 1256  make
+ 1257  vi ../opencv_window_demo.c 
+ 1258  make
+ 1259  ./mmal_opencv_window_demo 
+ 1260  vi ../opencv_window_demo.c 
+ 1261  make
+ 1262  ./mmal_opencv_window_demo 
+ 1263  sudo init 6
+ 1264  echo $DI
+ 1265  echo $DISPLAY 
+ 1266  screen
+ 1267  sudo raspi-config 
+ 1268  htop
+ 1269  ls
+ 1270  cd src/rpi-mmal-demo/
+ 1271  ls
+ 1272  cd build/
+ 1273  ls
+ 1274  ./mmal_opencv_window_demo 
+ 1275  export DISPLAY=:1.0
+ 1276  ./mmal_opencv_window_demo 
+ 1277  vi ../opencv_window_demo.c 
+ 1278  make
+ 1279  ./mmal_opencv_window_demo 
+ 1280  vi ../opencv_window_demo.c 
+ 1281  ./mmal_opencv_window_demo 
+ 1282  vi ../opencv_window_demo.c 
+ 1283  make
+ 1284  ./mmal_opencv_window_demo 
+ 1285  vi ../opencv_window_demo.c 
+ 1286  make
+ 1287  ./mmal_opencv_window_demo 
+ 1288  vi ../opencv_window_demo.c 
+ 1289  make
+ 1290  vi ../opencv_window_demo.c 
+ 1291  make
+ 1292  ./mmal_opencv_window_demo 
+ 1293  vi ../opencv_window_demo.c 
+ 1294  make
+ 1295  ./mmal_opencv_window_demo 
+ 1296  ls
+ 1297  vi ../opencv_window_demo.c 
+ 1298  make
+ 1299  ./mmal_opencv_window_demo 
+ 1300  ls
+ 1301  cd src/
+ 1302  ls
+ 1303  cd rpi-mmal-demo/
+ 1304  ls
+ 1305  cd build/
+ 1306  ls
+ 1307  vi ../opencv_window_demo.c 
+ 1308  make
+ 1309  export DISPLAY=:1.0
+ 1310  ./mmal_opencv_window_demo 
+ 1311  vi ../opencv_window_demo.c 
+ 1312  make
+ 1313  ./mmal_opencv_window_demo 
+ 1314  vi ../opencv_window_demo.c 
+ 1315  make
+ 1316  ./mmal_opencv_window_demo 
+ 1317  vi ../opencv_window_demo.c 
+ 1318  make
+ 1319  ./mmal_opencv_window_demo 
+ 1320  vi ../opencv_window_demo.c 
+ 1321  make
+ 1322  ./mmal_opencv_window_demo 
+ 1323  vi ../opencv_window_demo.c 
+ 1324  make
+ 1325  ./mmal_opencv_window_demo 
+ 1326  vi ../opencv_window_demo.c 
+ 1327  ./mmal_opencv_window_demo 
+ 1328  vi ../opencv_window_demo.c 
+ 1329  make
+ 1330  ./mmal_opencv_window_demo 
+ 1331  vi ../opencv_window_demo.c 
+ 1332  make
+ 1333  ./mmal_opencv_window_demo 
+ 1334  ls
+ 1335  sudo raspi-config 
+ 1336  ls
+ 1337  cd src/
+ 1338  ls
+ 1339  cd rpi-mmal-demo/
+ 1340  ls
+ 1341  cd build/
+ 1342  ls
+ 1343  ./mmal_opencv_window_demo 
+ 1344  export DISPLAY=:1.0
+ 1345  ./mmal_opencv_window_demo 
+ 1346  cd src/
+ 1347  ls
+ 1348  cd rpi-mmal-demo/
+ 1349  ls
+ 1350  cd build/
+ 1351  ls
+ 1352  ./mmal_opencv_window_demo 
+ 1353  export DISPLAY=:1.0
+ 1354  ./mmal_opencv_window_demo 
+ 1355  ls
+ 1356  git status
+ 1357  git diff opencv_window_demo.c
+ 1358  cd ..
+ 1359  git diff opencv_window_demo
+ 1360  ls
+ 1361  git diff opencv_window_demo.c
+ 1362  ls
+ 1363  git add .
+ 1364  git commit -m "rgb color"
+ 1365  ls
+ 1366  git status
+ 1367  ls
+ 1368  cd build/
+ 1369  ls
+ 1370  echo $DISPLAY 
+ 1371  ls
+ 1372  cd src/
+ 1373  sl
+ 1374  ls
+ 1375  cd rpi-mmal-demo/
+ 1376  ;ls
+ 1377  cd build/
+ 1378  ls
+ 1379  vi ../opencv_window_demo.c 
+ 1380  lw
+ 1381  ls
+ 1382  make
+ 1383  ./mmal_opencv_window_demo 
+ 1384  echo $DIRSTACK 
+ 1385  history | grep DIS
+ 1386  export DISPLAY=:0.0
+ 1387  ./mmal_opencv_window_demo 
+ 1388  vi ../opencv_window_demo.c 
+ 1389  make
+ 1390  ./mmal_opencv_window_demo 
+ 1391  vi ../opencv_window_demo.c 
+ 1392  make
+ 1393  ./mmal_opencv_window_demo 
+ 1394  vi ../opencv_window_demo.c 
+ 1395  ./mmal_opencv_window_demo 
+ 1396  make
+ 1397  ./mmal_opencv_window_demo 
+ 1398  vi ../opencv_window_demo.c 
+ 1399  make
+ 1400  ./mmal_opencv_window_demo 
+ 1401  make
+ 1402  vi ../opencv_window_demo.c 
+ 1403  make
+ 1404  ./mmal_opencv_window_demo 
+ 1405  ls
+ 1406  vi ../opencv_window_demo.c 
+ 1407  make
+ 1408  ./mmal_opencv_window_demo 
+ 1409  vi ../opencv_window_demo.c 
+ 1410  make
+ 1411  ./mmal_opencv_window_demo 
+ 1412  vi ../opencv_window_demo.c 
+ 1413  make
+ 1414  export DISPLAY=:1.0
+ 1415  ls
+ 1416  ./mmal_opencv_window_demo 
+ 1417  vi ../opencv_window_demo.c 
+ 1418  ls
+ 1419  ./mmal_opencv_window_demo 
+ 1420  vi ../opencv_window_demo.c 
+ 1421  make
+ 1422  ./mmal_opencv_window_demo 
+ 1423  vi ../opencv_window_demo.c 
+ 1424  make
+ 1425  ./mmal_opencv_window_demo 
+ 1426  vi ../opencv_window_demo.c 
+ 1427  make
+ 1428  ./mmal_opencv_window_demo 
+ 1429  vi ../opencv_window_demo.c 
+ 1430  make
+ 1431  vi ../opencv_window_demo.c 
+ 1432  make
+ 1433  ./mmal_opencv_window_demo 
+ 1434  vi ../opencv_window_demo.c 
+ 1435  make
+ 1436  ./mmal_opencv_window_demo 
+ 1437  vi ../opencv_window_demo.c 
+ 1438  make
+ 1439  vi ../opencv_window_demo.c 
+ 1440  make
+ 1441  vi ../opencv_window_demo.c 
+ 1442  make
+ 1443  ./mmal_opencv_window_demo 
+ 1444  vi ../opencv_window_demo.c 
+ 1445  make
+ 1446  ls
+ 1447  ./mmal_opencv_window_demo 
+ 1448  sudo raspi-config 
+ 1449  ls
+ 1450  cd 
+ 1451  cd src/
+ 1452  ls
+ 1453  cd sr
+ 1454  ls
+ 1455  cd rpi-mmal-demo/
+ 1456  ls
+ 1457  cd bi
+ 1458  ls
+ 1459  cd build/
+ 1460  ls
+ 1461  ./mmal_opencv_window_demo 
+ 1462  vi ../opencv_window_demo.c 
+ 1463  make
+ 1464  screen -ls
+ 1465  ls
+ 1466  cd src/rpi-mmal-demo/
+ 1467  ls
+ 1468  cd build/
+ 1469  ls
+ 1470  ./mmal_opencv_window_demo 
+ 1471  vi ../opencv_window_demo.c 
+ 1472  make
+ 1473  ./mmal_opencv_window_demo 
+ 1474  ./mmal_opencv_window_demo  | grep position
+ 1475  ls
+ 1476  ./mmal_opencv_window_demo 
+ 1477  vi ../opencv_window_demo.c 
+ 1478  make
+ 1479  ./mmal_opencv_window_demo 
+ 1480  export DISPLAY=:1.0
+ 1481  ./mmal_opencv_window_demo 
+ 1482  vi ../opencv_window_demo.c 
+ 1483  make
+ 1484  ./mmal_opencv_window_demo 
+ 1485  vi ../opencv_window_demo.c 
+ 1486  make
+ 1487  ./mmal_opencv_window_demo 
+ 1488  ls
+ 1489  vi ../opencv_window_demo.c 
+ 1490  make
+ 1491  ./mmal_opencv_
+ 1492  ./mmal_opencv_window_demo 
+ 1493  sl
+ 1494  ls
+ 1495  cd ..
+ 1496  cd
+ 1497  mkdir download
+ 1498  cd download/
+ 1499  ls
+ 1500  wget wget http://openelectrons.com/files/documents/pi-pan.tar.gz
+ 1501  tar -xvzf pi-pan.tar.gz 
+ 1502  cd pi
+ 1503  ls
+ 1504  sudo ./install-pi-pan.bash 
+ 1505  ls
+ 1506  chmod +x *.py
+ 1507  ./neutral_servo.py 
+ 1508  while True
+ 1509  while True; do ./neutral_servo.py; sleep 1; done;
+ 1510  while true; do ./neutral_servo.py; sleep 1; done;
+ 1511  ls
+ 1512  cd ..
+ 1513  ls
+ 1514  cd src/
+ 1515  ls
+ 1516  cd rpi-mmal-demo/
+ 1517  ls
+ 1518  cd ..
+ 1519  ls
+ 1520  cd rpi-mmal-demo/
+ 1521  ls
+ 1522  cd build/
+ 1523  ls
+ 1524  make
+ 1525  ./mmal_opencv_
+ 1526  ./mmal_opencv_window_demo 
+ 1527  vi ../opencv_window_demo.c 
+ 1528  ./mmal_opencv_window_demo 
+ 1529  make
+ 1530  ./mmal_opencv_window_demo 
+ 1531  vi ../opencv_window_demo.c 
+ 1532  make
+ 1533  ./mmal_opencv_window_demo 
+ 1534  vi ../opencv_window_demo.c 
+ 1535  make
+ 1536  ./mmal_opencv_window_demo 
+ 1537  vi ../opencv_window_demo.c 
+ 1538  make
+ 1539  ./mmal_opencv_window_demo 
+ 1540  vi ../opencv_window_demo.c 
+ 1541  make
+ 1542  ./mmal_opencv_window_demo 
+ 1543  vi ../opencv_window_demo.c 
+ 1544  make
+ 1545  ./mmal_opencv_window_demo 
+ 1546  vi /home/pi/src/nazt-red/opencv_demo.c 
+ 1547  vi ../opencv_window_demo.c 
+ 1548  ./mmal_opencv_window_demo 
+ 1549  ls
+ 1550  cd
+ 1551  ls
+ 1552  cd download/
+ 1553  ls
+ 1554  vi neutral_servo.py 
+ 1555  ls
+ 1556  vi pipan.py
+ 1557  ls
+ 1558  ll
+ 1559  ls -l
+ 1560  ./check-tilt.py 
+ 1561  screen
+ 1562  ls
+ 1563  ./neutral_servo.py 
+ 1564  ./check-pan.py 
+ 1565  ls
+ 1566  vi check-pan.py 
+ 1567  ./neutral_servo.py 
+ 1568  screen -r
+ 1569  screen -ls
+ 1570  ls
+ 1571  cd sr
+ 1572  ls
+ 1573  cd
+ 1574  cd src/
+ 1575  ls
+ 1576  cd rpi-mmal-demo/
+ 1577  ls
+ 1578  cd build/
+ 1579  ls
+ 1580  ./mmal_opencv_window_demo 
+ 1581  vi check-pan.py 
+ 1582  vi ../opencv_window_demo.c 
+ 1583  make
+ 1584  ./mmal_opencv_window_demo 
+ 1585  vi ../opencv_window_demo.c 
+ 1586  make
+ 1587  ./mmal_opencv_window_demo 
+ 1588  vi ../opencv_window_demo.c 
+ 1589  make
+ 1590  ./mmal_opencv_window_demo 
+ 1591  vi ../opencv_window_demo.c 
+ 1592  make
+ 1593  ./mmal_opencv_window_demo 
+ 1594  vi ../opencv_window_demo.c 
+ 1595  make
+ 1596  ./mmal_opencv_window_demo 
+ 1597  vi ../opencv_window_demo.c 
+ 1598  make
+ 1599  ./mmal_opencv_window_demo 
+ 1600  vi ../opencv_window_demo.c 
+ 1601  ./mmal_opencv_window_demo 
+ 1602  vi ../opencv_window_demo.c 
+ 1603  make
+ 1604  ./mmal_opencv_window_demo 
+ 1605  vi ../opencv_window_demo.c 
+ 1606  make
+ 1607  ./mmal_opencv_window_demo 
+ 1608  vi nat.sh
+ 1609  chmod +x nat.sh 
+ 1610  ./nat.sh 1 2 3
+ 1611  ./nat.sh 1 2 3 5
+ 1612  ls
+ 1613  ./mmal_opencv_window_demo | ./nat.sh 
+ 1614  echo "nat" | ./nat.sh 
+ 1615  echo "nat" | xargs ./nat.sh 
+ 1616  echo "123456" | xargs ./nat.sh 
+ 1617  echo "123456 2" | xargs ./nat.sh 
+ 1618  echo "123456" | xargs ./nat.sh cls
+ 1619  ls
+ 1620  ./mmal_opencv_window_demo | xargs ./nat.sh 
+ 1621  l
+ 1622  ls
+ 1623  cd 
+ 1624  ls
+ 1625  cd download/
+ 1626  ls
+ 1627  vi servoblaster.sh 
+ 1628  ls
+ 1629  cd ..
+ 1630  ls
+ 1631  cd 
+ 1632  ls
+ 1633  cd src/
+ 1634  ls
+ 1635  cd ..
+ 1636  s
+ 1637  ls
+ 1638  cd src/
+ 1639  ls
+ 1640  cd 
+ 1641  cd doq
+ 1642  cd download/
+ 1643  ls
+ 1644  vi servod 
+ 1645  ls
+ 1646  ./servod 
+ 1647  ls
+ 1648  cd 
+ 1649  ls
+ 1650  cd src/
+ 1651  ls
+ 1652  cd rpi-mmal-demo/build/
+ 1653  ls
+ 1654  ./mmal_opencv_window_demo  | echo
+ 1655  ./mmal_opencv_window_demo  | xargs  echo
+ 1656  ./mmal_opencv_window_demo 
+ 1657  ls
+ 1658  cat Makefile 
+ 1659  ls
+ 1660  ./mmal_opencv_window_demo 
+ 1661  ls
+ 1662  vi ../opencv_window_demo.c 
+ 1663  ls
+ 1664  vi nat.c
+ 1665  gcc nat.
+ 1666  gcc nat.c 
+ 1667  ./an
+ 1668  ./a.out 
+ 1669  ./a.out  | xargs ./nat.sh 
+ 1670  vi ../opencv_window_demo.c 
+ 1671  make
+ 1672  ./mmal_opencv_window_demo 
+ 1673  ./mmal_opencv_window_demo | xargs ./nat.sh 
+ 1674  ./nat.sh 1 23 4
+ 1675  ./mmal_opencv_window_demo | xargs ./nat.sh 
+ 1676  ./mmal_opencv_window_demo | grep \,
+ 1677  ./mmal_opencv_window_demo | xargs echo
+ 1678  ./mmal_opencv_window_demo 
+ 1679  ./mmal_opencv_window_demo  >> test.txt
+ 1680  cat test.txt 
+ 1681  vi ../opencv_window_demo.c 
+ 1682  make
+ 1683  ls
+ 1684  ./mmal_opencv_window_demo 
+ 1685  ./mmal_opencv_window_demo | xargs ./nat.sh 
+ 1686  ls
+ 1687  vi ../opencv_window_demo.c 
+ 1688  make
+ 1689  ./mmal_opencv_window_demo | xargs ./nat.sh 
+ 1690  vi ../opencv_window_demo.c 
+ 1691  ls
+ 1692  cd
+ 1693  ls
+ 1694  cd download/
+ 1695  ls
+ 1696  vi pipan.py
+ 1697  ./servod 
+ 1698  sudo ./servod 
+ 1699  sudo ./servod  0 1
+ 1700  ls /dev/servoblaster
+ 1701  vi nat.c
+ 1702  gcc nat.c 
+ 1703  ./a.out 
+ 1704  sudo ./a.out 
+ 1705  vi pipan.py
+ 1706  cho c0=120 > /dev/servoblaster
+ 1707  sudo echo 0=120 > /dev/servoblaster
+ 1708  sudo echo 0=0 > /dev/servoblaster
+ 1709  sudo echo 1=120 > /dev/servoblaster
+ 1710  cho 1=1 > /dev/servoblaster
+ 1711  echo 1=1 > /dev/servoblaster
+ 1712  sudo echo 1=1 > /dev/servoblaster
+ 1713  echo 1=180 > /dev/servoblaster
+ 1714  sudo echo 1=180 > /dev/servoblaster
+ 1715  sudo echo 0=180 > /dev/servoblaster
+ 1716  ./neutral_servo.py 
+ 1717  ls
+ 1718  ./check-pan.py 
+ 1719  ./check-tilt.py 
+ 1720  sudo raspi-config 
+ 1721  ls
+ 1722  cd src/rpi-mmal-demo/
+ 1723  ls
+ 1724  cd build/
+ 1725  l
+ 1726  ls
+ 1727  ./go 
+ 1728  history 
+ 1729  sudo echo 1=180 > /dev/servoblaster
+ 1730  sudo echo 1=150 > /dev/servoblaster
+ 1731  sudo echo 0=150 > /dev/servoblaster
+ 1732  sudo echo 1=180 > /dev/servoblaster
+ 1733  sudo echo 1=100 > /dev/servoblaster
+ 1734  sudo echo 0=150 > /dev/servoblaster
+ 1735  sudo echo 0=100 > /dev/servoblaster
+ 1736  sudo echo 0=240> /dev/servoblaster
+ 1737  ls
+ 1738  vi /home/pi/download/pipan.py
+ 1739  sudo echo 0=150 > /dev/servoblaster
+ 1740  sudo echo 0=220 > /dev/servoblaster
+ 1741  sudo echo 0=221 > /dev/servoblaster
+ 1742  sudo echo 0=70 > /dev/servoblaster
+ 1743  sudo echo 0=80 > /dev/servoblaster
+ 1744  #go down  min = 220
+ 1745  sudo echo 0=220> /dev/servoblaster
+ 1746  echo 1=150 > /dev/servoblaster
+ 1747  ifconfig 
+ 1748  .cls
+ 1749  ls
+ 1750  ./go 
+ 1751  export DISPLAY=:1.0
+ 1752  ./go 
+ 1753  vi ../opencv_window_demo.c 
+ 1754  make
+ 1755  ./mmal_opencv_window_demo 
+ 1756  vi ../opencv_window_demo.c 
+ 1757  make
+ 1758  ./mmal_opencv_window_demo 
+ 1759  vi ../opencv_window_demo.c 
+ 1760  make
+ 1761  ./mmal_opencv_
+ 1762  ./mmal_opencv_window_demo 
+ 1763  vi ../opencv_window_demo.c 
+ 1764  make
+ 1765  ./mmal_opencv_window_demo 
+ 1766  vi ../opencv_window_demo.c 
+ 1767  make
+ 1768  ./mmal_opencv_window_demo 
+ 1769  ls
+ 1770  ~/download/neutral_servo.py 
+ 1771  ./mmal_opencv_window_demo 
+ 1772  vi ../opencv_window_demo.c 
+ 1773  make
+ 1774  ./mmal_opencv_window_demo 
+ 1775  vi ../opencv_window_demo.c 
+ 1776  ls
+ 1777  cd src/
+ 1778  ls
+ 1779  cd rpi-mmal-demo/
+ 1780  ls
+ 1781  cd build/
+ 1782  ls
+ 1783  ./go 
+ 1784  export DISPLAY=:1.0
+ 1785  ./go 
+ 1786  vi ../opencv_window_demo.c 
+ 1787  make
+ 1788  vi ../opencv_window_demo.c 
+ 1789  make
+ 1790  ./mmal_opencv_window_demo 
+ 1791  vi ../opencv_window_demo.c 
+ 1792  git diff ../opencv_window_demo.c
+ 1793  vi ../opencv_window_demo.c 
+ 1794  make
+ 1795  vi ../opencv_window_demo.c 
+ 1796  make
+ 1797  ./mmal_opencv_window_demo 
+ 1798  vi ../opencv_window_demo.c 
+ 1799  make
+ 1800  ./mmal_opencv_window_demo 
+ 1801  vi ../opencv_window_demo.c 
+ 1802  make
+ 1803  ./mmal_opencv_window_demo 
+ 1804  vi ../opencv_window_demo.c 
+ 1805  make
+ 1806  ./mmal_opencv_window_demo 
+ 1807  vi ../opencv_window_demo.c 
+ 1808  make
+ 1809  ./mmal_opencv_window_demo 
+ 1810  vi ../opencv_window_demo.c 
+ 1811  make
+ 1812  ./mmal_opencv_window_demo 
+ 1813  vi ../opencv_window_demo.c 
+ 1814  make
+ 1815  ./mmal_opencv_window_demo 
+ 1816  vi ../opencv_window_demo.c 
+ 1817  make
+ 1818  ./mmal_opencv_window_demo 
+ 1819  make
+ 1820  ./mmal_opencv_window_demo 
+ 1821  vi ../opencv_window_demo.c 
+ 1822  make
+ 1823  ~/download/neutral_servo.py 
+ 1824  ./mmal_opencv_window_demo 
+ 1825  vi ../opencv_window_demo.c 
+ 1826  make
+ 1827  ./mmal_opencv_window_demo 
+ 1828  vi ../opencv_window_demo.c 
+ 1829  make
+ 1830  ./mmal_opencv_window_demo 
+ 1831  ~/download/neutral_servo.py 
+ 1832  vi ../opencv_window_demo.c 
+ 1833  make
+ 1834  ./mmal_opencv_window_demo 
+ 1835  vi ../opencv_window_demo.c 
+ 1836  make
+ 1837  ./mmal_opencv_window_demo 
+ 1838  vi ../opencv_window_demo.c 
+ 1839  ./mmal_opencv_window_demo 
+ 1840  vi ../opencv_window_demo.c 
+ 1841  make
+ 1842  ./mmal_opencv_
+ 1843  ./mmal_opencv_window_demo 
+ 1844  vi ../opencv_window_demo.c 
+ 1845  make
+ 1846  ./mmal_opencv_window_demo 
+ 1847  vi ../opencv_window_demo.c 
+ 1848  ./mmal_opencv_window_demo 
+ 1849  vi ../opencv_window_demo.c 
+ 1850  ./mmal_opencv_window_demo 
+ 1851  vi ../opencv_window_demo.c 
+ 1852  make
+ 1853  ./mmal_opencv_window_demo 
+ 1854  vi ../opencv_window_demo.c 
+ 1855  make
+ 1856  vi ../opencv_window_demo.c 
+ 1857  make
+ 1858  ./mmal_opencv_window_demo 
+ 1859  vi ../opencv_window_demo.c 
+ 1860  make
+ 1861  ./mmal_opencv_window_demo 
+ 1862  vi ../opencv_window_demo.c 
+ 1863  ./mmal_opencv_window_demo 
+ 1864  vi ../opencv_window_demo.c 
+ 1865  make
+ 1866  ./mmal_opencv_window_demo 
+ 1867  vi ../opencv_window_demo.c 
+ 1868  echo 0=150 > /dev/servoblaster
+ 1869  echo 0=140 > /dev/servoblaster
+ 1870  echo 0=100 > /dev/servoblaster
+ 1871  vi ../opencv_window_demo.c 
+ 1872  make
+ 1873  ./mmal_opencv_window_demo 
+ 1874  vi ../opencv_window_demo.c 
+ 1875  make
+ 1876  ./mmal
+ 1877  ./mmal_opencv_window_demo 
+ 1878  vi ../opencv_window_demo.c 
+ 1879  make
+ 1880  ./mmal_opencv_window_demo 
+ 1881  vi ../opencv_window_demo.c 
+ 1882  make
+ 1883  ./mmal_opencv_window_demo 
+ 1884  vi ../opencv_window_demo.c 
+ 1885  make
+ 1886  ./mmal_opencv_window_demo 
+ 1887  echo 0=88 > /dev/servoblaster
+ 1888  vi ../opencv_window_demo.c 
+ 1889  make
+ 1890  ./mmal_opencv_window_demo 
+ 1891  vi ../opencv_window_demo.c 
+ 1892  make
+ 1893  ./mmal_opencv_window_demo 
+ 1894  vi ../opencv_window_demo.c 
+ 1895  make
+ 1896  ./mmal_opencv_window_demo 
+ 1897  vi ../opencv_window_demo.c 
+ 1898  make
+ 1899  ./mmal_opencv_window_demo 
+ 1900  vi ../opencv_window_demo.c 
+ 1901  ./mmal_opencv_window_demo 
+ 1902  make
+ 1903  ./mmal_opencv_window_demo 
+ 1904  vi ../opencv_window_demo.c 
+ 1905  make
+ 1906  ./mmal_opencv_window_demo 
+ 1907  make
+ 1908  ./mmal_opencv_window_demo 
+ 1909  vi ../opencv_window_demo.c 
+ 1910  make
+ 1911  ./mmal_opencv_window_demo 
+ 1912  vi ../opencv_window_demo.c 
+ 1913  make
+ 1914  ./mmal_opencv_window_demo 
+ 1915  vi ../opencv_window_demo.c 
+ 1916  make
+ 1917  ./mmal_opencv_window_demo 
+ 1918  vi ../opencv_window_demo.c A
+ 1919  makeA
+ 1920  vi ../opencv_window_demo.c
+ 1921  make
+ 1922  ./mmal_opencv_window_demo 
+ 1923  vi ../opencv_window_demo.c
+ 1924  make
+ 1925  ./mmal_opencv_window_demo 
+ 1926  vi ../opencv_window_demo.c
+ 1927  make
+ 1928  ./mmal_opencv_window_demo 
+ 1929  vi ../opencv_window_demo.c
+ 1930  make
+ 1931  ./mmal_opencv_window_demo 
+ 1932  vi ../opencv_window_demo.c
+ 1933  make
+ 1934  ./mmal_opencv_window_demo 
+ 1935  vi ../opencv_window_demo.c
+ 1936  make
+ 1937  ./mmal_opencv_window_demo 
+ 1938  vi ../opencv_window_demo.c
+ 1939  make
+ 1940  ./mmal_opencv_window_demo 
+ 1941  vi ../opencv_window_demo.c
+ 1942  make
+ 1943  ./mmal_opencv_window_demo 
+ 1944  vi ../opencv_window_demo.c
+ 1945  make
+ 1946  ./mmal_opencv_window_demo 
+ 1947  vi ../opencv_window_demo.c
+ 1948  mak
+ 1949  make
+ 1950  ./mmal_opencv_window_demo 
+ 1951  vi ../opencv_window_demo.c
+ 1952  make
+ 1953  ./mmal_opencv_window_demo 
+ 1954  vi ../opencv_window_demo.c
+ 1955  ./mmal_opencv_window_demo 
+ 1956  make
+ 1957  ./mmal_opencv_window_demo 
+ 1958  vi ../opencv_window_demo.c
+ 1959  make
+ 1960  ./mmal_opencv_window_demo 
+ 1961  vi ../opencv_window_demo.c
+ 1962  make
+ 1963  ./mmal_opencv_window_demo 
+ 1964  vi ../opencv_window_demo.c
+ 1965  make
+ 1966  ./mmal_opencv_window_demo 
+ 1967  vi ../opencv_window_demo.c
+ 1968  make
+ 1969  ./mmal_opencv_window_demo 
+ 1970  vi ../opencv_window_demo.c
+ 1971  make
+ 1972  ./mmal_opencv_window_demo 
+ 1973  vi ../opencv_window_demo.c
+ 1974  make
+ 1975  ./mmal_opencv_window_demo 
+ 1976  sudo init 6
+ 1977  ls
+ 1978  cd src/
+ 1979  ls
+ 1980  cd rpi-mmal-demo/
+ 1981  ls
+ 1982  cd build/
+ 1983  ls
+ 1984  ./go 
+ 1985  export DISPLAY=:1.0
+ 1986  ./go 
+ 1987  echo $Ps1
+ 1988  echo $PS1
+ 1989  echo $PS2
+ 1990  echo $PS4
+ 1991  ls
+ 1992  df -h
+ 1993  ifconfig 
+ 1994  sudo init 6
+ 1995  raspivid 
+ 1996  raspivid  -d
+ 1997  raspivid  -t 9999
+ 1998  sudo init 6
+ 1999  ifconfig 
+ 2000  sudo init 0 
+ 2001  ls
+ 2002  cd opencv-2.4.9/
+ 2003  ls
+ 2004  cd samples/
+ 2005  ls
+ 2006  history 
+ 2007  ls
+ 2008  cd 
+ 2009  ls
+ 2010  cd src/
+ 2011  ls
+ 2012  history 
+ 2013  ls
+ 2014  cd nazt-red/
+ 2015  ls
+ 2016  git status
+ 2017  cd ..
+ 2018  ls
+ 2019  cd rpi-mmal-demo/
+ 2020  ls
+ 2021  git status
+ 2022  ls
+ 2023  cd build/
+ 2024  ls
+ 2025  ./a.out 
+ 2026  cd ..
+ 2027  ls
+ 2028  ls -ail go
+ 2029  ls -ail
+ 2030  cd build/
+ 2031  ls
+ 2032  ls -ail
+ 2033  cd ..
+ 2034  git init
+ 2035  git add .
+ 2036  git commit -m "First pi red object detection"
+ 2037  git remote add origin git@github.com:NAzT/pi-opencv-red-object-detection.git
+ 2038  git push -u origin master
+ 2039  git remote -v
+ 2040  ls
+ 2041  git status
+ 2042  git remote rm origin
+ 2043  git remote add git remote add origin git@github.com:NAzT/pi-opencv-red-object-detection.git
+ 2044  git remote add origin git@github.com:NAzT/pi-opencv-red-object-detection.git
+ 2045  git push -u origin master
+ 2046  ls
+ 2047  history 
+ 2048  ls
+ 2049  history > history.txt
