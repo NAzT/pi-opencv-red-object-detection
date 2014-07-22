@@ -1,0 +1,5 @@
+/home/pi/src/rpi-mmal-demo/build/CMakeFiles/mmal_buffer_demo.dir
+/home/pi/src/rpi-mmal-demo/build/CMakeFiles/mmal_opencv_demo.dir
+/home/pi/src/rpi-mmal-demo/build/CMakeFiles/mmal_opencv_window_demo.dir
+/home/pi/src/rpi-mmal-demo/build/CMakeFiles/mmal_video_record.dir
+/home/pi/src/rpi-mmal-demo/build/CMakeFiles/mmaldemo.dir
