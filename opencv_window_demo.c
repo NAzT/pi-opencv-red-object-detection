@@ -8,10 +8,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include <opencv2/core/core_c.h>
-#include <opencv2/objdetect/objdetect.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
+
+#include <cv.h>
+//#include <opencv2/core/core_c.h>
+//#include <opencv2/objdetect/objdetect.hpp>
+//#include <opencv2/highgui/highgui.hpp>
+//#include <opencv2/imgproc/imgproc.hpp>
 
 #include "bcm_host.h"
 #include "interface/vcos/vcos.h"
@@ -28,11 +30,14 @@
 #define MMAL_CAMERA_CAPTURE_PORT 2
 
 #define VIDEO_FPS 30
-#define VIDEO_WIDTH 1280
-#define VIDEO_HEIGHT 720
+//#define VIDEO_WIDTH 1280
+//#define VIDEO_HEIGHT 720
 
-//#define VIDEO_WIDTH 640 
-//#define VIDEO_HEIGHT 360
+#define VIDEO_WIDTH 640
+#define VIDEO_HEIGHT 360
+
+#define CENTER_X 320/2
+#define CENTER_Y 180/2
 
 typedef struct {
     int video_width;
@@ -57,13 +62,42 @@ typedef struct {
 } PORT_USERDATA;
 
 //int iLowH = 47;
-int iLowH = 50;
+int iLowH = 165;
 int iLowS = 150; 
 int iLowV = 50;
 
-int iHighH = 179;
+int iHighH = 255;
 int iHighS = 255;
 int iHighV = 255;
+
+int servo_x = 150;
+int servo_y = 150;
+
+char x_temp[10];
+char y_temp[10];
+
+CvMoments *moments;
+FILE *fp; 
+
+#define DEBUG 1
+
+void servo_up() { 
+    servo_y -= 1; 
+    if (DEBUG)
+      fprintf(stdout, "go up to %d", servo_y);
+    sprintf(y_temp, "0=%d\n", servo_y); 
+    fprintf(fp, y_temp);
+    fflush(fp); 
+}
+
+void servo_down() { 
+    servo_y += 1; 
+    if (DEBUG)
+      fprintf(stdout, "go down to %d", servo_y);
+    sprintf(y_temp, "0=%d\n", servo_y); 
+    fprintf(fp, y_temp);
+    fflush(fp); 
+}
 
 static void video_buffer_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffer) {
     static int frame_count = 0;
@@ -102,34 +136,63 @@ static void video_buffer_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffe
 
     cvInRangeS(userdata->image_opencv, cvScalar(iLowH, iLowS, iLowV, 0), cvScalar(iHighH, iHighS, iHighV, 0), userdata->image_segmented); //Threshold the image 
         // Calculate the moments to estimate the position of the ball
-        CvMoments *moments = (CvMoments*)malloc(sizeof(CvMoments));
+        moments = (CvMoments*)malloc(sizeof(CvMoments));
         cvMoments(userdata->image_segmented, moments, 1);
 
         // The actual moment values
         double moment10 = cvGetSpatialMoment(moments, 1, 0);
         double moment01 = cvGetSpatialMoment(moments, 0, 1);
         double area = cvGetCentralMoment(moments, 0, 0);
+        //printf("moment10 %f, moment01 %f, area %f\t", moment10, moment01, area);
 
     // Holding the last and current ball positions
         static int posX = 0;
         static int posY = 0;
 
-        int lastX = posX;
-        int lastY = posY;
 
         posX = moment10/area;
         posY = moment01/area;
 
+        int lastX = posX;
+        int lastY = posY;
+
         // Print it out for debugging purposes
-        printf("position (%d,%d)\n", posX, posY);
+        //printf("(%d, %d)\n", posX, posY);
+        //printf("(%d, %d) ", posX, posY);
+        fprintf(stdout, "(%d, %d), (%d, %d)\n", posX, posY, lastX, lastY); 
 
         if(lastX>0 && lastY>0 && posX>0 && posY>0)
-        {
-            // Draw a yellow line from the previous point to the current point
+        { 
+            int y_err = (posY - CENTER_Y);
+            fprintf(stdout, "::: %d :::\n", y_err );
+            if ( posY < CENTER_Y) {
+              if (frame_count %1 == 0 && y_err < -20)
+              {
+                servo_down();
+              }
+            }
+            else if ( posY > CENTER_Y) {
+              if (frame_count %1 == 0)
+              {
+                servo_up();
+              }
+            }
+            else { fprintf(stdout, "BUG!!!"); }
+
+            //x_err -= (-posX - CENTER_X)/200;
+            //y_err -= (-posY - CENTER_Y)/200; 
+
+            //sprintf(y_temp, "0=%d\n", y_err);
+            
+            //fprintf(fp, x_temp);
+            //fprintf(fp, y_temp);
+            //fflush(fp); 
+            //printf("===== \n X: %s", x_temp);
             cvLine(userdata->image_segmented, cvPoint(posX, posY), cvPoint(lastX, lastY), cvScalar(0,255,255, 0), 5, 8, 0);
         }
+        fflush(stdout);
 
-    //cvShowImage("Frame", userdata->image_segmented);
+    cvShowImage("Frame", userdata->image_segmented);
 
     char c =cvWaitKey(1);
 
@@ -152,7 +215,7 @@ static void video_buffer_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffe
             fps = frame_count;
         }
         userdata->video_fps = fps;
-        printf("  Frame = %d, Frame Post %d, Framerate = %.0f fps \n", frame_count, frame_post_count, fps);
+        //printf("  Frame = %d, Frame Post %d, Framerate = %.0f fps \n", frame_count, frame_post_count, fps);
     }
 
     mmal_buffer_header_release(buffer);
@@ -180,6 +243,16 @@ int main(int argc, char** argv) {
     MMAL_POOL_T *camera_video_port_pool;
     MMAL_CONNECTION_T *camera_preview_connection = 0;
     PORT_USERDATA userdata;
+    fp = fopen("/dev/servoblaster", "w");
+    if (fp == NULL) {
+        printf("Error opening file\n");
+        exit(0);
+    }
+    else {
+     fprintf(fp, "0=150\n1=150\n");
+     fflush(fp); 
+    }
+
     int display_width, display_height;
 
     printf("Running...\n");
@@ -191,8 +264,7 @@ int main(int argc, char** argv) {
     userdata.video_width = VIDEO_WIDTH;
     userdata.video_height = VIDEO_HEIGHT;
     userdata.opencv_width = VIDEO_WIDTH / 4;
-    userdata.opencv_height = VIDEO_HEIGHT / 4;
-
+    userdata.opencv_height = VIDEO_HEIGHT / 4; 
 
     graphics_get_display_size(0, &display_width, &display_height);
 
@@ -200,7 +272,7 @@ int main(int argc, char** argv) {
     r_w = (float) display_width / (float) userdata.opencv_width;
     r_h = (float) display_height / (float) userdata.opencv_height;
 
-    printf("Display resolution = (%d, %d)\n", display_width, display_height);
+    //printf("Display resolution = (%d, %d)\n", display_width, display_height);
 
     /* setup opencv */
     cvNamedWindow("Frame", 1);
@@ -264,7 +336,7 @@ int main(int argc, char** argv) {
 
     camera_video_port->buffer_size = userdata.preview_width * userdata.preview_height * 12 / 8;
     camera_video_port->buffer_num = 1;
-    printf("  Camera video buffer_size = %d\n", camera_video_port->buffer_size);
+    //printf("  Camera video buffer_size = %d\n", camera_video_port->buffer_size);
 
     status = mmal_port_format_commit(camera_video_port);
 
@@ -302,7 +374,6 @@ int main(int argc, char** argv) {
         printf("Error: unable to enable camera video port (%u)\n", status);
         return -1;
     } 
-
 
     status = mmal_component_enable(camera);
 
@@ -394,7 +465,7 @@ int main(int argc, char** argv) {
                     fps = opencv_frames;
                 }
 
-                printf("  OpenCV Frame = %d, Framerate = %.2f fps \n", opencv_frames, fps);
+                //printf("  OpenCV Frame = %d, Framerate = %.2f fps \n", opencv_frames, fps);
             }
 
             graphics_resource_fill(img_overlay, 0, 0, GRAPHICS_RESOURCE_WIDTH, GRAPHICS_RESOURCE_HEIGHT, GRAPHICS_RGBA32(0, 0, 0, 0x00));
